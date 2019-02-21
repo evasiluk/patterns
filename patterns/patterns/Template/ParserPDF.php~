@@ -1,0 +1,8 @@
+<?php
+namespace Acme\Template;
+
+class ParserPDF extends Parser{
+	private function parse() {
+		echo "Parsing PDF... <br>";	
+	}
+}

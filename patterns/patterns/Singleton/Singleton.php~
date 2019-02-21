@@ -1,0 +1,30 @@
+<?
+namespace Acme\Singleton;
+
+class singleton {
+	private $instance;
+	private $props;
+	
+	private function __construct() {}
+	
+	public function getInstance() {
+		if($this->instance === null) {
+			$this->instance = new self;		
+		}
+		return $this->instance;	
+	}
+	
+	private function __clone() {}
+	
+	public function __wakeup() {
+		return new Exception("Cannot unserialize");	
+	}
+	
+	public function setProps($key, $value) {
+		$this->props[$key] = $value;
+	}
+	
+	$public function getProp($key) {
+		return $this->props[$key];
+	}
+}

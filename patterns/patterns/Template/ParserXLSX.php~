@@ -1,0 +1,8 @@
+<?php
+namespace Acme\Template;
+
+class ParserXLSX extends Parser{
+	private function parse() {
+		echo "Parsing xlsx... <br>";	
+	}
+}

@@ -1,0 +1,20 @@
+<?php
+require "vendor/autoload.php";
+
+use Acme\Prototype\MarsSea;
+use Acme\Prototype\MarsTerrain;
+use Acme\Prototype\EarthSea;
+use Acme\Prototype\EarthTerrain;
+use Acme\Prototype\Factory;
+$r = new MarsSea();
+$factory = new Factory(new EarthSea(), new EarthTerrain());
+
+$sea = $factory->getSea();
+echo $sea->test;
+
+$sea2 = $factory->getSea();
+$sea2->test = "clone";
+echo $sea2->test;
+echo $sea->test;
+$terrain = $factory->getTerrain();
+$terrain->run();
